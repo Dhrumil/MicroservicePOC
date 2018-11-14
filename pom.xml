@@ -8,8 +8,6 @@
 
 	<name>Microservices-POC</name>
 	<description>Demo project Microservice-poc REST and documentation using swagger</description>
-
-
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
