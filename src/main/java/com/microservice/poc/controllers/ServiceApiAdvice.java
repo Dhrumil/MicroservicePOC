@@ -1,15 +1,12 @@
 package com.microservice.poc.controllers;
 
 
-import com.fasterxml.jackson.core.JsonParseException;
-import com.fasterxml.jackson.databind.JsonMappingException;
 import com.microservice.poc.exceptions.*;
 import com.microservice.poc.model.Response.Response;
 import com.microservice.poc.utility.LoggerUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.web.bind.ServletRequestBindingException;
 import org.springframework.web.bind.annotation.*;
 
@@ -182,7 +179,7 @@ public class ServiceApiAdvice {
         return response;
     }
 
-*/
+
     @ExceptionHandler(HttpMessageNotReadableException.class)
     @ResponseStatus(value = HttpStatus.BAD_REQUEST)
     @ResponseBody
@@ -239,5 +236,5 @@ public class ServiceApiAdvice {
         return response;
 
     }
-
+*/
 }
