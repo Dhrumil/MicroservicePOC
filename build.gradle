@@ -1,0 +1,33 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+
+group = 'com.microservice.poc'
+version = '1.0.0'
+
+description = """SpringBootRestApiExample"""
+
+sourceCompatibility = 1.5
+targetCompatibility = 1.5
+tasks.withType(JavaCompile) {
+	options.encoding = 'UTF-8'
+}
+
+
+
+repositories {
+        
+     maven { url "http://repo.maven.apache.org/maven2" }
+}
+dependencies {
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version:'2.0.5.RELEASE'
+    compile group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-xml', version:'2.9.6'
+    compile group: 'io.springfox', name: 'springfox-swagger2', version:'2.9.2'
+    compile group: 'io.springfox', name: 'springfox-swagger-ui', version:'2.9.2'
+    compile group: 'io.springfox', name: 'springfox-bean-validators', version:'2.9.2'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-jdbc', version:'2.0.5.RELEASE'
+    compile group: 'org.hibernate.javax.persistence', name: 'hibernate-jpa-2.0-api', version:'1.0.1.Final'
+    compile(group: 'org.apache.httpcomponents', name: 'httpclient', version:'4.3.4') {
+exclude(module: 'commons-logging')
+    }
+    runtime group: 'com.h2database', name: 'h2', version:'1.4.197'
+}
