@@ -1,11 +1,11 @@
 package com.websystique.springboot;
- 
+
+import com.microservice.poc.model.UserTest;
+import org.springframework.web.client.RestTemplate;
+
 import java.net.URI;
 import java.util.LinkedHashMap;
 import java.util.List;
-
-import com.websystique.springboot.model.User;
-import org.springframework.web.client.RestTemplate;
  
 
 public class SpringBootRestTestClient {
@@ -22,7 +22,7 @@ public class SpringBootRestTestClient {
          
         if(usersMap!=null){
             for(LinkedHashMap<String, Object> map : usersMap){
-                System.out.println("User : id="+map.get("id")+", Name="+map.get("name")+", Age="+map.get("age")+", Salary="+map.get("salary"));;
+                System.out.println("User : id=" + map.get("id") + ", Name=" + map.get("name") + ", Age=" + map.get("age") + ", Salary=" + map.get("salary"));
             }
         }else{
             System.out.println("No user exist----------");
@@ -33,7 +33,7 @@ public class SpringBootRestTestClient {
     private static void getUser(){
         System.out.println("Testing getUser API----------");
         RestTemplate restTemplate = new RestTemplate();
-        User user = restTemplate.getForObject(REST_SERVICE_URI+"/user/1", User.class);
+        UserTest user = restTemplate.getForObject(REST_SERVICE_URI + "/user/1", UserTest.class);
         System.out.println(user);
     }
      
@@ -41,8 +41,8 @@ public class SpringBootRestTestClient {
     private static void createUser() {
         System.out.println("Testing create User API----------");
         RestTemplate restTemplate = new RestTemplate();
-        User user = new User(0,"Sarah",51,134);
-        URI uri = restTemplate.postForLocation(REST_SERVICE_URI+"/user/", user, User.class);
+        UserTest user = new UserTest(0, "Sarah", 51, 134);
+        URI uri = restTemplate.postForLocation(REST_SERVICE_URI + "/user/", user, UserTest.class);
         System.out.println("Location : "+uri.toASCIIString());
     }
  
@@ -50,7 +50,7 @@ public class SpringBootRestTestClient {
     private static void updateUser() {
         System.out.println("Testing update User API----------");
         RestTemplate restTemplate = new RestTemplate();
-        User user  = new User(1,"Tomy",33, 70000);
+        UserTest user = new UserTest(1, "Tomy", 33, 70000);
         restTemplate.put(REST_SERVICE_URI+"/user/1", user);
         System.out.println(user);
     }
