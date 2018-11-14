@@ -9,19 +9,18 @@
     <property name="LOG_FILE" value="microservice-poc"/>
     <property name="LOG_DIR" value="logs"/>
     <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <!--file>logs/microservice-poc.log</file -->
         <file>${LOG_DIR}/${LOG_FILE}.log</file>
         <append>true</append>
         <encoder>
             <pattern>%d %5p | %t | %-55logger{55} | %m %n</pattern>
         </encoder>
         <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
-            <fileNamePattern>logs/microservice-poc.%i.log.zip</fileNamePattern>
+            <fileNamePattern>${LOG_DIR}/${LOG_FILE}.%i.log.zip</fileNamePattern>
             <minIndex>1</minIndex>
             <maxIndex>50</maxIndex>
         </rollingPolicy>
         <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
-            <maxFileSize>10MB</maxFileSize>
+            <maxFileSize>3MB</maxFileSize>
         </triggeringPolicy>
     </appender>
     <appender name="ASYNC" class="ch.qos.logback.classic.AsyncAppender">
