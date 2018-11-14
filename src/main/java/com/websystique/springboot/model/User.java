@@ -2,7 +2,6 @@ package com.websystique.springboot.model;
 	
 public class User {
 
-    //TODO
 	private long id;
 	
 	private String name;
