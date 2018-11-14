@@ -12,7 +12,9 @@
 	<version>1.0.0</version>
 	<packaging>jar</packaging>
 
-	<name>SpringBootRestApiExample</name>
+	<name>Microservices-POC</name>
+	<description>Demo project Microservice-poc REST and documentation using swagger</description>
+
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>

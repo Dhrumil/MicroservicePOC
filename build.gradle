@@ -1,10 +1,14 @@
 apply plugin: 'java'
 apply plugin: 'maven'
 
+apply plugin: 'application'
+
+mainClassName = 'com.microservice.poc.Application'
+
 group = 'com.microservice.poc'
 version = '1.0.0'
 
-description = """SpringBootRestApiExample"""
+description = """Microservices-POC"""
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
