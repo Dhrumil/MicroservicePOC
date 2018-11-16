@@ -2,7 +2,6 @@ package com.microservice.poc.model;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import org.hibernate.validator.constraints.NotBlank;
 
 import javax.validation.constraints.*;
 
@@ -12,14 +11,16 @@ public class Person extends AbstractModel {
     @ApiModelProperty(notes = "${person.id}", example = "1", required = true, position = 0)
     private Long id;
 
-    @NotBlank
+    @NotBlank(message = "First name of the person must not be blank!")
     @Size(min = 1, max = 20)
     @ApiModelProperty(notes = "${person.firstname}", example = "John", required = true, position = 1)
     private String firstName;
 
-    @NotBlank
-    @Pattern(regexp = "[SOME REGULAR EXPRESSION]")
-    @ApiModelProperty(notes = "${person.lastlame}", example = "Doe", required = true, position = 2)
+
+    @NotBlank(message = "Last name of the person must not be blank!")
+    //@Pattern(regexp = "[SOME REGULAR EXPRESSION]")
+    @Size(min = 1, max = 20)
+    @ApiModelProperty(notes = "${person.lastname}", example = "Doe", required = true, position = 2)
     private String lastName;
 
     @Min(0)

@@ -21,6 +21,7 @@ public class VLPDbOperationService extends AbstractService<PersonLawfulDetail> {
 
     @Override
     public PersonLawfulDetail create(PersonLawfulDetail personLawfulDetail) {
+
         return super.create(personLawfulDetail);
     }
 
@@ -36,10 +37,15 @@ public class VLPDbOperationService extends AbstractService<PersonLawfulDetail> {
 
     }
 
-    public PersonLawfulDetail find(Long userId) {
+    public PersonLawfulDetail find(Long personId) {
 
         VLPDbOperationDao vLPDbProcessDao = (VLPDbOperationDao) dao;
-        return vLPDbProcessDao.find(userId);
+        return vLPDbProcessDao.find(personId);
+    }
+
+    public PersonLawfulDetail findByEmail(String email) {
+        VLPDbOperationDao vLPDbProcessDao = (VLPDbOperationDao) dao;
+        return vLPDbProcessDao.findByEmail(email);
     }
 
     public Page<PersonLawfulDetail> findAll(Integer pageNum, Integer pageSize) {

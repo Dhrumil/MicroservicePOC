@@ -127,19 +127,20 @@ public class ServiceApiAdvice {
         return response;
     }
 
-    @ExceptionHandler(Exception.class)
-    @ResponseStatus(value = HttpStatus.INTERNAL_SERVER_ERROR)
-    @ResponseBody
-    public Response handleException(Exception e) {
-        Response response = new Response();
-        response.setCode("9999");
-        response.setDescription("System Error Occurred. Contact System Administrator.");
+    /*
+        @ExceptionHandler(Exception.class)
+        @ResponseStatus(value = HttpStatus.INTERNAL_SERVER_ERROR)
+        @ResponseBody
+        public Response handleException(Exception e) {
+            Response response = new Response();
+            response.setCode("9999");
+            response.setDescription("System Error Occurred. Contact System Administrator.");
 
-        logger.error(e.toString());
-        LoggerUtil.logError(logger, e);
-        return response;
-    }
-
+            logger.error(e.toString());
+            LoggerUtil.logError(logger, e);
+            return response;
+        }
+    */
     @ExceptionHandler(FailedRequestException.class)
     @ResponseStatus(value = HttpStatus.FORBIDDEN)
     @ResponseBody
@@ -180,23 +181,7 @@ public class ServiceApiAdvice {
     }
 
 
-    @ExceptionHandler(HttpMessageNotReadableException.class)
-    @ResponseStatus(value = HttpStatus.BAD_REQUEST)
-    @ResponseBody
-    public Response handleUreadableException(HttpMessageNotReadableException e) {
-
-        Response response = new Response();
-        response.setCode("10013");
-        response.setDescription(e.getMessage());
-
-        logger.error(e.toString());
-        LoggerUtil.logError(logger, e);
-        return response;
-    }
-
-
-
-    @ExceptionHandler(HttpMessageNotReadableException.class)
+   @ExceptionHandler(HttpMessageNotReadableException.class)
     @ResponseStatus(value = HttpStatus.BAD_REQUEST)
     public Response handleHttpMessageNotReadableException(HttpMessageNotReadableException e) {
         Response response = new Response();
@@ -235,6 +220,26 @@ public class ServiceApiAdvice {
         LoggerUtil.logError(logger, e);
         return response;
 
+    }
+
+
+    @ExceptionHandler(BadRequestException.class)
+    @ResponseStatus(value = HttpStatus.BAD_REQUEST)
+    @ResponseBody
+    protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException exception, HttpHeaders headers, HttpStatus status, WebRequest request) {
+        ValidationError error = ValidationErrorBuilder.fromBindingErrors(exception.getBindingResult());
+        //return handleExceptionInternal(exception, error, headers, status, request);
+
+        return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
+
+        Response response = new Response();
+        response.setCode("400");
+        response.setDescription(exception.getMessage());
+        response.setErrors(error.getErrors());
+
+        logger.error(exception.toString());
+        LoggerUtil.logError(logger, exception);
+        return response;
     }
 */
 }

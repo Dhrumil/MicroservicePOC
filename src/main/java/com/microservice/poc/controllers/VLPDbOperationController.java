@@ -43,7 +43,8 @@ public class VLPDbOperationController {
     @ApiOperation("${vLPDbProcessController.create}")
     public PersonLawfulDetail createPerson(@ApiParam("Person information for a new Person Lawful Detail to be created.")
                                            @RequestBody PersonLawfulDetail personLawfulDetail) {
-        return vLPDbProcessService.create(personLawfulDetail);
+        // return vLPDbProcessService.create(personLawfulDetail);
+        return null;
     }
 
 

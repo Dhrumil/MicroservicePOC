@@ -21,7 +21,7 @@ import java.util.Date;
 import java.util.HashMap;
 
 @RestController
-@RequestMapping(value = "/api/v1/monitoring/")
+@RequestMapping(value = "/api/v1/monitoring")
 @Api(description = "Set of endpoints for checking Application Health.")
 public class AppMonitorController {
 

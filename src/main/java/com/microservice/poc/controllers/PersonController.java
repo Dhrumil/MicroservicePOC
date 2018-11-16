@@ -12,6 +12,34 @@ public class PersonController {
     @Autowired
     private PersonService personService;
 
+  @RequestMapping(method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+    @ApiOperation("${personcontroller.createperson}")
+    public Person createPerson(@ApiParam("Person information for a new person to be created.")
+                                 @Valid @RequestBody Person person) {
+        return personService.createPerson(person);
+    }
+
+
+    @RequestMapping(value = "/task", method = RequestMethod.POST)
+    public Task createTask(@Valid @RequestBody Task task) {
+        return task;
+    }
+
+
+    @ExceptionHandler
+    @ResponseStatus(value = HttpStatus.BAD_REQUEST)
+    public ValidationError handleException(MethodArgumentNotValidException exception) {
+        return createValidationError(exception);
+    }
+
+    private ValidationError createValidationError(MethodArgumentNotValidException exception) {
+        return ValidationErrorBuilder.fromBindingErrors(exception.getBindingResult());
+    }
+
+    @Autowired
+    public void setPersonService(PersonService personService) {
+        this.personService = personService;
+    }
     @RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation("${personcontroller.getallpersons}")
     public List<Person> getAllPersons() {
@@ -32,16 +60,6 @@ public class PersonController {
         personService.deletePerson(id);
     }
 
-    @RequestMapping(method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
-    @ApiOperation("${personcontroller.createperson}")
-    public Person createPerson(@ApiParam("Person information for a new person to be created.")
-                                   @RequestBody Person person) {
-        return personService.createPerson(person);
-    }
 
-    @Autowired
-    public void setPersonService(PersonService personService) {
-        this.personService = personService;
-    }
 */
 }
