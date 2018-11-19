@@ -7,7 +7,7 @@ import java.sql.Date;
 
 //@JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class InitialVerificationRequestSetType extends AbstractModel {
+public class InitialVerificationRequest extends AbstractModel {
 
     private DHSID dhsid;
     private String firstName;

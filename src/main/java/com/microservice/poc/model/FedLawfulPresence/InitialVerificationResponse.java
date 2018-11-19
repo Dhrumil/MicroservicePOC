@@ -7,7 +7,7 @@ import java.sql.Date;
 
 //@JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class InitialVerificationIndividualResponseSetType extends AbstractModel {
+public class InitialVerificationResponse extends AbstractModel {
 
     private String caseNumber;//TODO [a-zA-Z0-9]{13}[A-Z]{2}
     private String verificationStatus;

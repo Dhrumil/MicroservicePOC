@@ -6,9 +6,6 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
-/**
- * Created by Lukman.Arogundade on 12/17/2015.
- */
 @Configuration
 public class CustomWebMvcAutoConfig extends WebMvcConfigurerAdapter {
 

@@ -1,8 +1,8 @@
 package com.microservice.poc.controllers;
 
 
-import com.microservice.poc.model.FedLawfulPresence.InitialVerificationIndividualResponseSetType;
-import com.microservice.poc.model.FedLawfulPresence.InitialVerificationRequestSetType;
+import com.microservice.poc.model.FedLawfulPresence.InitialVerificationRequest;
+import com.microservice.poc.model.FedLawfulPresence.InitialVerificationResponse;
 import com.microservice.poc.services.FedLawfulPresence1Service;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -26,9 +26,9 @@ public class FedLawfulPresence1Controller {
 
     @RequestMapping(method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation("${fedLawfulPresence1.create}")
-    public InitialVerificationIndividualResponseSetType
+    public InitialVerificationResponse
     createPerson(@ApiParam("Person information for a new Federal Person Lawful Detail to be created.")
-                 @Valid @RequestBody InitialVerificationRequestSetType request) {
+                 @Valid @RequestBody InitialVerificationRequest request) {
         return fedLawfulPresence1Service.process(request);
     }
 
