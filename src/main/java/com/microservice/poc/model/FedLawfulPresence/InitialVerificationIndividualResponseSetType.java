@@ -20,8 +20,18 @@ public class InitialVerificationIndividualResponseSetType extends AbstractModel 
     private String fiveYearBarApplyCode;//TODO (Y-Yes, N-No, P-Pending, X-N/A)
     private String qualifiedNonCitizenCode;//TODO (Y-Yes, N-No, P-Pending, X-N/A)
     private String fiveYearBarMetCode;//TODO (Y-Yes, N-No, P-Pending, X-N/A)
-    private String uSCitizenCode;//TODO (Y-Yes, N-No, P-Pending, X-N/A)
+
+    private String usCitizenCode;//TODO (Y-Yes, N-No, P-Pending, X-N/A)
     private String responseCode;
+
+    public String getUsCitizenCode() {
+        return usCitizenCode;
+    }
+
+    public void setUsCitizenCode(String usCitizenCode) {
+        this.usCitizenCode = usCitizenCode;
+    }
+
 
     public String getResponseCode() {
         return responseCode;
@@ -119,11 +129,5 @@ public class InitialVerificationIndividualResponseSetType extends AbstractModel 
         this.fiveYearBarMetCode = fiveYearBarMetCode;
     }
 
-    public String getuSCitizenCode() {
-        return uSCitizenCode;
-    }
 
-    public void setuSCitizenCode(String uSCitizenCode) {
-        this.uSCitizenCode = uSCitizenCode;
-    }
 }

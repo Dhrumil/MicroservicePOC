@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.validation.Valid;
 
 @RestController
-@RequestMapping(value = "/api/v1/fedlawfulpresence1")
+@RequestMapping(value = "/api/v1/vlp1")
 @Api(description = "Set of endpoints to process,store and retrieve the Federal Lawful presence details  ")
 public class FedLawfulPresence1Controller {
 
