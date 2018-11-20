@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @RestController
 @RequestMapping(value = "/api/v1/vlp1")
@@ -30,6 +31,13 @@ public class FedLawfulPresence1Controller {
     createPerson(@ApiParam("Person information for a new Federal Person Lawful Detail to be created.")
                  @Valid @RequestBody InitialVerificationRequest request) {
         return fedLawfulPresence1Service.process(request);
+    }
+
+
+    @RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    @ApiOperation("${fedLawfulPresence1a..getall}")
+    public List<InitialVerificationResponse> getAllLawfulPerson() {
+        return fedLawfulPresence1Service.get();
     }
 
 

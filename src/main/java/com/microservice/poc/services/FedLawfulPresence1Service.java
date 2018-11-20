@@ -11,6 +11,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Service
 public class FedLawfulPresence1Service extends AbstractService<InitialVerificationRequest> {
 
@@ -43,6 +46,18 @@ public class FedLawfulPresence1Service extends AbstractService<InitialVerificati
             response.setResponseCode(request.getFirstName());//TODO
         } catch (Exception ex) {
             logger.error(" [process()]: " + ex.getMessage());
+            LoggerUtil.logError(logger, ex);
+        }
+        return response;
+    }
+
+    public List<InitialVerificationResponse> get() {
+
+        List<InitialVerificationResponse> response = new ArrayList<>();
+        try {
+            response.set(0, new InitialVerificationResponse());//TODO
+        } catch (Exception ex) {
+            logger.error(" [get()]: " + ex.getMessage());
             LoggerUtil.logError(logger, ex);
         }
         return response;

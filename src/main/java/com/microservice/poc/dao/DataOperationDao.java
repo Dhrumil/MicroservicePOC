@@ -1,5 +1,7 @@
 package com.microservice.poc.dao;
 
+
+import com.microservice.poc.model.PersonLawfulDetail.PersonLawFulDetailsResponse;
 import com.microservice.poc.model.PersonLawfulDetail.PersonLawfulDetail;
 import com.microservice.poc.utility.H2PocUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +21,7 @@ import java.util.Map;
 
 
 @Repository
-public class VLPDbOperationDao extends AbstractDao<PersonLawfulDetail> {
+public class DataOperationDao extends AbstractDao<PersonLawfulDetail> {
 
     private SimpleJdbcCall findByEmail;
 
@@ -72,6 +74,11 @@ public class VLPDbOperationDao extends AbstractDao<PersonLawfulDetail> {
 
             return null;
         }
+    }
+
+    public List<PersonLawFulDetailsResponse> findAlls() {
+
+        return null;
     }
 
 

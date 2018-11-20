@@ -1,22 +1,19 @@
 package com.microservice.poc.model.PersonLawfulDetail;
 
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.microservice.poc.model.AbstractModel;
+import com.microservice.poc.model.Response.ResponseErrors;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 import java.util.Date;
 import java.util.List;
 
-//@Data
-
 //@JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
+@ApiModel(description = "Class representing a Person Lawful Detail Response.")
+public class PersonLawFulDetailsResponse extends AbstractModel {
 
-
-@ApiModel(description = "Class representing a Person Lawful Detail Request.")
-public class PersonLawfulDetail extends AbstractModel {
 
     @ApiModelProperty(example = "124646")
     private String UUID;
@@ -37,7 +34,11 @@ public class PersonLawfulDetail extends AbstractModel {
     @ApiModelProperty(example = "2018-03-24", position = 8)
     private Date grantDate;
 
-    @ApiModelProperty(position = 9)
+
+    private String responseCode;
+
+    private String status;
+    private List<ResponseErrors> responseErrors;
     private List<AdditionalLawfulDetail> additionalLawfulDetail;
 
     public String getUUID() {
@@ -88,6 +89,14 @@ public class PersonLawfulDetail extends AbstractModel {
         this.lawfulPresenceCode = lawfulPresenceCode;
     }
 
+    public String getResponseCode() {
+        return responseCode;
+    }
+
+    public void setResponseCode(String responseCode) {
+        this.responseCode = responseCode;
+    }
+
     public String getCaseNumber() {
         return caseNumber;
     }
@@ -110,6 +119,22 @@ public class PersonLawfulDetail extends AbstractModel {
 
     public void setGrantDate(Date grantDate) {
         this.grantDate = grantDate;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public List<ResponseErrors> getResponseErrors() {
+        return responseErrors;
+    }
+
+    public void setResponseErrors(List<ResponseErrors> responseErrors) {
+        this.responseErrors = responseErrors;
     }
 
     public List<AdditionalLawfulDetail> getAdditionalLawfulDetail() {
