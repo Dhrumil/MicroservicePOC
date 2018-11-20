@@ -12,20 +12,28 @@ import java.util.Date;
 @ApiModel(description = "Class representing a Resubmit Response.")
 public class ResubmitResponse extends AbstractModel {
 
-    @ApiModelProperty(example = "454646464TU")
+    @ApiModelProperty(example = "F573314109012NV")
     private String caseNumber;//TODO [a-zA-Z0-9]{13}[A-Z]{2}
 
+    @ApiModelProperty(example = "Merritt", position = 1)
     private String nonCitLastName;
+    @ApiModelProperty(example = "Lemuel", position = 2)
     private String nonCitFirstName;
+    @ApiModelProperty(example = "", position = 3)
     private String nonCitMiddleName;
-
+    @ApiModelProperty(example = "1986-03-24", position = 4)
     private Date nonCitBirthDate;
+    @ApiModelProperty(example = "2017-03-24", position = 5)
     private Date nonCitEntryDate;
 
+    @ApiModelProperty(example = "2017-11-11", position = 6)
     private Date admittedToDate;
+    @ApiModelProperty(example = "Admit. Txt", position = 7)
     private String admittedToText;
 
+    @ApiModelProperty(example = "WA", position = 8)
     private String nonCitCountryBirthCd;
+    @ApiModelProperty(example = "WA", position = 9)
     private String nonCitCountryCitCd;
 
 

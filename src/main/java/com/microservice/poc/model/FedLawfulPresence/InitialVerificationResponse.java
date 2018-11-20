@@ -13,31 +13,31 @@ import java.util.Date;
 @ApiModel(description = "Class representing a Initial Verification Response.")
 public class InitialVerificationResponse extends AbstractModel {
 
-    @ApiModelProperty(example = "454646464TU")
+    @ApiModelProperty(example = "F573314109012NV")
     private String caseNumber;//TODO [a-zA-Z0-9]{13}[A-Z]{2}
     @ApiModelProperty(example = "NOT_VFD", position = 1)
     private String verificationStatus;
-    @ApiModelProperty(example = "Smith", position = 2)
+    @ApiModelProperty(example = "PAL", position = 2)
     private String nonCitCoaCode;//TODO  1..3
-    @ApiModelProperty(example = "Smith", position = 3)
+    @ApiModelProperty(example = "5", position = 3)
     private int eligStatementCd;
-    @ApiModelProperty(example = "Smith", position = 4)
+    @ApiModelProperty(example = "OTHER", position = 4)
     private String iAVTypeCode;//TODO 1..25
-    @ApiModelProperty(example = "Smith", position = 5)
+    @ApiModelProperty(example = "IAV Text", position = 5)
     private String iAVTypeTxt;//TODO 1.100
     @ApiModelProperty(example = "2018-09-09", position = 6)
     private Date grantDate;
     @ApiModelProperty(example = "Smith", position = 7)
     private String agencyAction;//TODO 1..250
-    @ApiModelProperty(example = "Smith", position = 8)
+    @ApiModelProperty(example = "Y", position = 8)
     private String fiveYearBarApplyCode;//TODO (Y-Yes, N-No, P-Pending, X-N/A)
-    @ApiModelProperty(example = "Smith", position = 9)
+    @ApiModelProperty(example = "Y", position = 9)
     private String qualifiedNonCitizenCode;//TODO (Y-Yes, N-No, P-Pending, X-N/A)
-    @ApiModelProperty(example = "Smith", position = 10)
+    @ApiModelProperty(example = "Y", position = 10)
     private String fiveYearBarMetCode;//TODO (Y-Yes, N-No, P-Pending, X-N/A)
-    @ApiModelProperty(example = "PA9876432", position = 11)
+    @ApiModelProperty(example = "X", position = 11)
     private String usCitizenCode;//TODO (Y-Yes, N-No, P-Pending, X-N/A)
-    @ApiModelProperty(example = "00", position = 12)
+    @ApiModelProperty(example = "HS000000", position = 12)
     private String responseCode;
 
     public String getUsCitizenCode() {

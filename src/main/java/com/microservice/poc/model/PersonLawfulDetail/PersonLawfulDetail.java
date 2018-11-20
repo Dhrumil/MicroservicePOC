@@ -22,7 +22,7 @@ public class PersonLawfulDetail extends AbstractModel {
     private String uuid;
     @ApiModelProperty(example = "76", position = 1)
     private String eligibilityStatementCode;
-    @ApiModelProperty(example = "22", position = 2)
+    @ApiModelProperty(example = "PAL", position = 2)
     private String nonCitCoaCode;
     @ApiModelProperty(example = "Y", position = 3)
     private String fiveYearBarMet;
@@ -30,7 +30,7 @@ public class PersonLawfulDetail extends AbstractModel {
     private String qualifiedCitizenCode;
     @ApiModelProperty(example = "LAWFULPRESENCE", position = 5)
     private String lawfulPresenceCode;
-    @ApiModelProperty(example = "UT", position = 6)
+    @ApiModelProperty(example = "F573314109012NV", position = 6)
     private String caseNumber;
     @ApiModelProperty(example = "124646", position = 7)
     private String agencyAction;

@@ -43,7 +43,7 @@ public class InitiateAdditionalVerifRequest extends AbstractModel {
     @ApiModelProperty(example = "Very food", position = 11)
     private String comments;
 
-    @ApiModelProperty(example = "Very food", position = 12)
+    @ApiModelProperty(example = "okay", position = 12)
     private String aka;
 
     public String getCasePOCFullName() {

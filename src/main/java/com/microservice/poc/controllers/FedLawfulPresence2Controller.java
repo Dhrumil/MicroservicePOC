@@ -20,6 +20,7 @@ import java.util.List;
 @RestController
 @RequestMapping(value = "/api/v1/vlp2")
 @Api(description = "Set of endpoints for Initial Additional Verification of the Federal Lawful presence details  ")
+
 public class FedLawfulPresence2Controller {
 
     @Autowired
@@ -28,7 +29,7 @@ public class FedLawfulPresence2Controller {
     @RequestMapping(method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation("${fedLawfulPresence2.process}")
     public InitiateAdditionalVerifResponse
-    resubmit(@ApiParam("nitiate Additional Verification  for a new Federal Person Lawful Detail to be created.")
+    resubmit(@ApiParam("Initiate Additional Verification  for a new Federal Person Lawful Detail to be created.")
              @Valid @RequestBody InitiateAdditionalVerifRequest request) {
         return fedLawfulPresence2Service.process(request);
     }

@@ -10,9 +10,9 @@ import io.swagger.annotations.ApiModelProperty;
 @ApiModel(description = "Class representing a Resubmit Request.")
 public class ResubmitRequest extends AbstractModel {
 
-    @ApiModelProperty(example = "454646464TU")
+    @ApiModelProperty(example = "F573314109012NV")
     private String caseNumber;//TODO [a-zA-Z0-9]{13}[A-Z]{2}
-    @ApiModelProperty(position = 21)
+    @ApiModelProperty(position = 21, example = "2780020089")
     private String sevisId;
     @ApiModelProperty(example = "true", position = 5)
     private boolean fiveYearBarApplicabilityIndicator;

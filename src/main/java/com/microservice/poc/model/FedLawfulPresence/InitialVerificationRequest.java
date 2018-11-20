@@ -14,13 +14,13 @@ public class InitialVerificationRequest extends AbstractModel {
 
     @ApiModelProperty(example = "I327DOCUMENTID")
     private DHSID dhsid;
-    @ApiModelProperty(example = "Smith", position = 1)
+    @ApiModelProperty(example = "Lemuel", position = 1)
     private String firstName;
     @ApiModelProperty(example = "A", position = 2)
     private String middleName;
-    @ApiModelProperty(example = "Mike", position = 3)
+    @ApiModelProperty(example = "Merritt", position = 3)
     private String lastName;
-    @ApiModelProperty(example = "1995-11-12", position = 4)
+    @ApiModelProperty(example = "1986-03-24", position = 4)
     private Date dateOfBirth;
     @ApiModelProperty(example = "true", position = 5)
     private boolean fiveYearBarApplicabilityIndicator;
@@ -28,7 +28,7 @@ public class InitialVerificationRequest extends AbstractModel {
     private boolean requestGrantDateIndicator;
     @ApiModelProperty(example = "Verified okay", position = 7)
     private String requesterCommentsForHub; //TODO 1-100
-    @ApiModelProperty(example = "Smith Mike", position = 7)
+    @ApiModelProperty(example = "Lemuel Merritt", position = 7)
     private String casePOCFullName;
     @ApiModelProperty(example = "7172768756", position = 8)
     private String casePOCPhoneNumber; //TODO [0-9]{10}
@@ -38,7 +38,7 @@ public class InitialVerificationRequest extends AbstractModel {
     private String alienNumber;//TODO [0-9]{9}
     @ApiModelProperty(example = "2020-11-12", position = 11)
     private Date docExpirationDate;
-    @ApiModelProperty(example = "2019-11-12", position = 12)
+    @ApiModelProperty(example = "2026-09-09", position = 12)
     private Date passportExpirationDate;
     @ApiModelProperty(example = "AZR123764545", position = 13)
     private String receiptNumber;//TODO [a-zA-Z]{3}[0-9]{10}
@@ -48,15 +48,15 @@ public class InitialVerificationRequest extends AbstractModel {
     private String naturalizationNumber;//TODO [a-zA-Z0-9]{6,12}
     @ApiModelProperty(example = "00074715", position = 16)
     private String visaNumber;//TODO [a-zA-Z0-9]{8}
-    @ApiModelProperty(example = "USA", position = 17)
+    @ApiModelProperty(example = "PLW", position = 17)
     private String countryOfIssuance;//TODO [a-zA-Z]{3}
-    @ApiModelProperty(example = "A5869494", position = 18)
+    @ApiModelProperty(example = "B75855686647", position = 18)
     private String passportNumber;// TODO [a-zA-Z0-9]{6,12}
     @ApiModelProperty(example = "USA", position = 19)
     private String passportCountry;
     @ApiModelProperty(example = "69000888062", position = 20)
     private String i94Number;
-    @ApiModelProperty(position = 21)
+    @ApiModelProperty(position = 21, example = "2780020089")
     private String sevisId;
     @ApiModelProperty(example = "3478", position = 22)
     private String docDescReq;//TODO 1..15
