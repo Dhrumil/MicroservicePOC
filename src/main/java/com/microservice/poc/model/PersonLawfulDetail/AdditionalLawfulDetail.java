@@ -12,19 +12,19 @@ import io.swagger.annotations.ApiModelProperty;
 @ApiModel(description = "Class representing a Additional Lawful Person Detail.")
 public class AdditionalLawfulDetail extends AbstractModel {
 
-    @ApiModelProperty(example = "124646")
-    private String UUID;
+    @ApiModelProperty(example = "124", position = 3)
+    private String uuid;
     @ApiModelProperty(example = "AttestedFirstName", position = 1)
     private String detailName;
     @ApiModelProperty(example = "Lemuel", position = 2)
     private String detailValue;
 
-    public String getUUID() {
-        return UUID;
+    public String getUuid() {
+        return uuid;
     }
 
-    public void setUUID(String UUID) {
-        this.UUID = UUID;
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
     }
 
     public String getDetailName() {

@@ -15,8 +15,8 @@ import java.util.List;
 public class PersonLawFulDetailsResponse extends AbstractModel {
 
 
-    @ApiModelProperty(example = "124646")
-    private String UUID;
+    @ApiModelProperty(example = "124", position = 11)
+    private String uuid;
     @ApiModelProperty(example = "76", position = 1)
     private String eligibilityStatementCode;
     @ApiModelProperty(example = "22", position = 2)
@@ -34,19 +34,22 @@ public class PersonLawFulDetailsResponse extends AbstractModel {
     @ApiModelProperty(example = "2018-03-24", position = 8)
     private Date grantDate;
 
-
+    @ApiModelProperty(example = "00", position = 9)
     private String responseCode;
 
+    @ApiModelProperty(example = "NOT_VFD", position = 10)
     private String status;
+
     private List<ResponseErrors> responseErrors;
     private List<AdditionalLawfulDetail> additionalLawfulDetail;
 
-    public String getUUID() {
-        return UUID;
+
+    public String getUuid() {
+        return uuid;
     }
 
-    public void setUUID(String UUID) {
-        this.UUID = UUID;
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
     }
 
     public String getEligibilityStatementCode() {

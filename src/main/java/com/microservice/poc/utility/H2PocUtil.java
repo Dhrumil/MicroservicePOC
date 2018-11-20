@@ -408,7 +408,7 @@ public class H2PocUtil {
             // STEP 3: Execute a query
             stmt = conn.createStatement();
             String sql = "INSERT INTO PersonLawfulDetail " + "VALUES (" + id + ","
-                    + personLawfulDetail.getUUID() + ","
+                    + personLawfulDetail.getUuid() + ","
                     + personLawfulDetail.getEligibilityStatementCode() + ","
                     + personLawfulDetail.getNonCitCoaCode() + ","
                     + personLawfulDetail.getFiveYearBarMet() + ","

@@ -18,8 +18,8 @@ import java.util.List;
 @ApiModel(description = "Class representing a Person Lawful Detail Request.")
 public class PersonLawfulDetail extends AbstractModel {
 
-    @ApiModelProperty(example = "124646")
-    private String UUID;
+    @ApiModelProperty(example = "1246")
+    private String uuid;
     @ApiModelProperty(example = "76", position = 1)
     private String eligibilityStatementCode;
     @ApiModelProperty(example = "22", position = 2)
@@ -40,12 +40,12 @@ public class PersonLawfulDetail extends AbstractModel {
     @ApiModelProperty(position = 9)
     private List<AdditionalLawfulDetail> additionalLawfulDetail;
 
-    public String getUUID() {
-        return UUID;
+    public String getUuid() {
+        return uuid;
     }
 
-    public void setUUID(String UUID) {
-        this.UUID = UUID;
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
     }
 
     public String getEligibilityStatementCode() {

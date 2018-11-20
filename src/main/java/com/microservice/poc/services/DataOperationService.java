@@ -35,35 +35,39 @@ public class DataOperationService extends AbstractService<PersonLawfulDetail> {
         request.setLawfulPresenceCode("");
         request.setNonCitCoaCode("");
         request.setQualifiedCitizenCode("");
-        request.setUUID(Utility.guidID());
+        request.setUuid(String.valueOf(Utility.generateRandom(5)));
 
         getResponses = new PersonLawFulDetailsResponse();
         List<ResponseErrors> responseErrors = new ArrayList<>();
         ResponseErrors error = new ResponseErrors();
-        error.setName("");
-        error.setValue("");
+        error.setName("N/A");
+        error.setValue("N/A");
 
-        //responseErrors.set(1,error);
+        responseErrors.add(error);
 
         additionList = new ArrayList<>();
         AdditionalLawfulDetail temp = new AdditionalLawfulDetail();
         temp.setDetailName("AttestedDOB");
         temp.setDetailValue("1986-03-24");
+        temp.setUuid(String.valueOf(Utility.generateRandom(5)));
         additionList.add(temp);
 
         temp = new AdditionalLawfulDetail();
         temp.setDetailName("AttestedLastName");
         temp.setDetailValue("Merritt");
+        temp.setUuid(String.valueOf(Utility.generateRandom(5)));
         additionList.add(temp);
 
         temp = new AdditionalLawfulDetail();
         temp.setDetailName("AttestedSSN");
         temp.setDetailValue("686345323");
+        temp.setUuid(String.valueOf(Utility.generateRandom(5)));
         additionList.add(temp);
 
         temp = new AdditionalLawfulDetail();
         temp.setDetailName("PersonUSCitizenIndicator");
         temp.setDetailValue("true");
+        temp.setUuid(String.valueOf(Utility.generateRandom(5)));
         additionList.add(temp);
 
         getResponses.setResponseErrors(responseErrors);
@@ -72,10 +76,10 @@ public class DataOperationService extends AbstractService<PersonLawfulDetail> {
         getResponses.setCaseNumber(request.getCaseNumber());
         getResponses.setEligibilityStatementCode(request.getEligibilityStatementCode());
         getResponses.setFiveYearBarMet(request.getFiveYearBarMet());
-        getResponses.setLawfulPreseneCode(request.getLawfulPresenceCode());
+        getResponses.setLawfulPresenceCode(request.getLawfulPresenceCode());
         getResponses.setNonCitCoaCode(request.getNonCitCoaCode());
         getResponses.setQualifiedCitizenCode(request.getQualifiedCitizenCode());
-        getResponses.setUUID(request.getUUID());
+        getResponses.setUuid(request.getUuid());
 
         try {
             request.setGrantDate(Utility.convertDate("19-Nov-2018"));
@@ -125,7 +129,9 @@ public class DataOperationService extends AbstractService<PersonLawfulDetail> {
 
     public List<PersonLawFulDetailsResponse> findAlls() {
         DataOperationDao dataOperationDao = (DataOperationDao) dao;
-        return dataOperationDao.findAlls();
+        List<PersonLawFulDetailsResponse> list = new ArrayList<>();
+        list.add(getResponses);
+        return list;//dataOperationDao.findAlls();
     }
 
     public PersonLawFulDetailsResponse getResponse(PersonLawfulDetail request) {
