@@ -35,7 +35,7 @@ public class DataOperationService extends AbstractService<PersonLawfulDetail> {
         request.setLawfulPresenceCode("");
         request.setNonCitCoaCode("");
         request.setQualifiedCitizenCode("");
-        request.setUuid(String.valueOf(Utility.generateRandom(5)));
+        request.setUuid(String.valueOf(Utility.generateRandom(5) + 1));
 
         getResponses = new PersonLawFulDetailsResponse();
         List<ResponseErrors> responseErrors = new ArrayList<>();
@@ -49,25 +49,25 @@ public class DataOperationService extends AbstractService<PersonLawfulDetail> {
         AdditionalLawfulDetail temp = new AdditionalLawfulDetail();
         temp.setDetailName("AttestedDOB");
         temp.setDetailValue("1986-03-24");
-        temp.setUuid(String.valueOf(Utility.generateRandom(5)));
+        temp.setUuid(String.valueOf(Utility.generateRandom(5) + 1));
         additionList.add(temp);
 
         temp = new AdditionalLawfulDetail();
         temp.setDetailName("AttestedLastName");
         temp.setDetailValue("Merritt");
-        temp.setUuid(String.valueOf(Utility.generateRandom(5)));
+        temp.setUuid(String.valueOf(Utility.generateRandom(5) + 1));
         additionList.add(temp);
 
         temp = new AdditionalLawfulDetail();
         temp.setDetailName("AttestedSSN");
         temp.setDetailValue("686345323");
-        temp.setUuid(String.valueOf(Utility.generateRandom(5)));
+        temp.setUuid(String.valueOf(Utility.generateRandom(5) + 1));
         additionList.add(temp);
 
         temp = new AdditionalLawfulDetail();
         temp.setDetailName("PersonUSCitizenIndicator");
         temp.setDetailValue("true");
-        temp.setUuid(String.valueOf(Utility.generateRandom(5)));
+        temp.setUuid(String.valueOf(Utility.generateRandom(5) + 1));
         additionList.add(temp);
 
         getResponses.setResponseErrors(responseErrors);

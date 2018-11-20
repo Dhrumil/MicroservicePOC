@@ -2,37 +2,63 @@ package com.microservice.poc.model.FedLawfulPresence;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.microservice.poc.model.AbstractModel;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 import java.sql.Date;
 
 //@JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
+@ApiModel(description = "Class representing a Initial Verification Request.")
 public class InitialVerificationRequest extends AbstractModel {
 
+    @ApiModelProperty(example = "I327DOCUMENTID")
     private DHSID dhsid;
+    @ApiModelProperty(example = "Smith", position = 1)
     private String firstName;
+    @ApiModelProperty(example = "A", position = 2)
     private String middleName;
+    @ApiModelProperty(example = "Mike", position = 3)
     private String lastName;
+    @ApiModelProperty(example = "1995-11-12", position = 4)
     private Date dateOfBirth;
+    @ApiModelProperty(example = "true", position = 5)
     private boolean fiveYearBarApplicabilityIndicator;
+    @ApiModelProperty(example = "false", position = 6)
     private boolean requestGrantDateIndicator;
-    private String RequesterCommentsForHub; //TODO 1-100
+    @ApiModelProperty(example = "Verified okay", position = 7)
+    private String requesterCommentsForHub; //TODO 1-100
+    @ApiModelProperty(example = "Smith Mike", position = 7)
     private String casePOCFullName;
+    @ApiModelProperty(example = "7172768756", position = 8)
     private String casePOCPhoneNumber; //TODO [0-9]{10}
+    @ApiModelProperty(example = "765443434", position = 9)
     private String casePOCPhoneNumberExtension;//TODO [0-9]{10}
-
+    @ApiModelProperty(example = "000000773", position = 10)
     private String alienNumber;//TODO [0-9]{9}
+    @ApiModelProperty(example = "2020-11-12", position = 11)
     private Date docExpirationDate;
+    @ApiModelProperty(example = "2019-11-12", position = 12)
     private Date passportExpirationDate;
+    @ApiModelProperty(example = "AZR123764545", position = 13)
     private String receiptNumber;//TODO [a-zA-Z]{3}[0-9]{10}
+    @ApiModelProperty(example = "PA9876432", position = 14)
     private String citizenshipNumber;//TODO [a-zA-Z0-9]{6,12}
+    @ApiModelProperty(example = "9876432", position = 15)
     private String naturalizationNumber;//TODO [a-zA-Z0-9]{6,12}
+    @ApiModelProperty(example = "00074715", position = 16)
     private String visaNumber;//TODO [a-zA-Z0-9]{8}
+    @ApiModelProperty(example = "USA", position = 17)
     private String countryOfIssuance;//TODO [a-zA-Z]{3}
+    @ApiModelProperty(example = "A5869494", position = 18)
     private String passportNumber;// TODO [a-zA-Z0-9]{6,12}
+    @ApiModelProperty(example = "USA", position = 19)
     private String passportCountry;
+    @ApiModelProperty(example = "69000888062", position = 20)
     private String i94Number;
+    @ApiModelProperty(position = 21)
     private String sevisId;
+    @ApiModelProperty(example = "3478", position = 22)
     private String docDescReq;//TODO 1..15
 
     public String getAlienNumber() {
@@ -196,11 +222,11 @@ public class InitialVerificationRequest extends AbstractModel {
     }
 
     public String getRequesterCommentsForHub() {
-        return RequesterCommentsForHub;
+        return requesterCommentsForHub;
     }
 
     public void setRequesterCommentsForHub(String requesterCommentsForHub) {
-        RequesterCommentsForHub = requesterCommentsForHub;
+        this.requesterCommentsForHub = requesterCommentsForHub;
     }
 
     public String getCasePOCFullName() {

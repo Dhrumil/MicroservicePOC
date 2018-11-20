@@ -5,12 +5,14 @@ import com.microservice.poc.dao.FedLawfulPresence1Dao;
 import com.microservice.poc.model.FedLawfulPresence.InitialVerificationRequest;
 import com.microservice.poc.model.FedLawfulPresence.InitialVerificationResponse;
 import com.microservice.poc.utility.LoggerUtil;
+import com.microservice.poc.utility.Utility;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,29 +41,54 @@ public class FedLawfulPresence1Service extends AbstractService<InitialVerificati
         super.update(request);
     }
 
+    static InitialVerificationResponse sampleResponse;
+
+    static {
+
+        sampleResponse = new InitialVerificationResponse();
+        sampleResponse.setResponseCode("00");
+        sampleResponse.setAgencyAction("");
+        sampleResponse.setCaseNumber("454646464TU");
+        sampleResponse.setEligStatementCd(1);
+        sampleResponse.setFiveYearBarApplyCode("true");
+        try {
+            sampleResponse.setGrantDate(Utility.convertDate("09-Nov-2018"));
+        } catch (ParseException e) {
+            logger.error(" [Static data]: " + e.getMessage());
+            LoggerUtil.logError(logger, e);
+        }
+        sampleResponse.setiAVTypeCode("");
+        sampleResponse.setiAVTypeTxt("");
+        sampleResponse.setNonCitCoaCode("");
+        sampleResponse.setQualifiedNonCitizenCode("");
+        sampleResponse.setUsCitizenCode("PA9876432");
+        sampleResponse.setVerificationStatus("NOT_VFD");
+
+
+    }
+
     public InitialVerificationResponse process(InitialVerificationRequest request) {
 
-        InitialVerificationResponse response = new InitialVerificationResponse();
+      /*  InitialVerificationResponse response = new InitialVerificationResponse();
         try {
             response.setResponseCode(request.getFirstName());//TODO
         } catch (Exception ex) {
             logger.error(" [process()]: " + ex.getMessage());
             LoggerUtil.logError(logger, ex);
-        }
-        return response;
+        }*/
+        return sampleResponse;
     }
 
     public List<InitialVerificationResponse> get() {
 
         List<InitialVerificationResponse> response = new ArrayList<>();
         try {
-            response.set(0, new InitialVerificationResponse());//TODO
+            response.add(sampleResponse);
         } catch (Exception ex) {
             logger.error(" [get()]: " + ex.getMessage());
             LoggerUtil.logError(logger, ex);
         }
         return response;
     }
-
 
 }

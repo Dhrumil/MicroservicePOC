@@ -27,7 +27,7 @@ public class FedLawfulPresence1AController {
     @RequestMapping(method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation("${fedLawfulPresence1a.process}")
     public ReverificationResponse
-    createPerson(@ApiParam("Person information verification for a new Federal Person Lawful Detail to be created.")
+    reverification(@ApiParam("Person information verification for a new Federal Person Lawful Detail to be created.")
                  @Valid @RequestBody ReverificationRequest request) {
         return fedLawfulPresence1AService.process(request);
     }
