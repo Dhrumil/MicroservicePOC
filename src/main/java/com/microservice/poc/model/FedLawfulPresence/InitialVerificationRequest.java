@@ -26,13 +26,13 @@ public class InitialVerificationRequest extends AbstractModel {
     private boolean fiveYearBarApplicabilityIndicator;
     @ApiModelProperty(example = "false", position = 6)
     private boolean requestGrantDateIndicator;
-    @ApiModelProperty(example = "Verified okay", position = 7)
+    @ApiModelProperty(example = "", position = 7)
     private String requesterCommentsForHub; //TODO 1-100
     @ApiModelProperty(example = "Lemuel Merritt", position = 7)
     private String casePOCFullName;
     @ApiModelProperty(example = "7172768756", position = 8)
     private String casePOCPhoneNumber; //TODO [0-9]{10}
-    @ApiModelProperty(example = "765443434", position = 9)
+    @ApiModelProperty(example = "310", position = 9)
     private String casePOCPhoneNumberExtension;//TODO [0-9]{10}
     @ApiModelProperty(example = "000000773", position = 10)
     private String alienNumber;//TODO [0-9]{9}
@@ -52,7 +52,7 @@ public class InitialVerificationRequest extends AbstractModel {
     private String countryOfIssuance;//TODO [a-zA-Z]{3}
     @ApiModelProperty(example = "B75855686647", position = 18)
     private String passportNumber;// TODO [a-zA-Z0-9]{6,12}
-    @ApiModelProperty(example = "USA", position = 19)
+    @ApiModelProperty(example = "PLW", position = 19)
     private String passportCountry;
     @ApiModelProperty(example = "69000888062", position = 20)
     private String i94Number;

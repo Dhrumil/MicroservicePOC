@@ -24,28 +24,28 @@ public class FedLawfulPresence1BService extends AbstractService<ResubmitRequest>
     static {
         response = new ResubmitResponse();
 
-        response.setCaseNumber("454646464TU");
-        response.setResponseCode("00");
+        response.setCaseNumber("F573314109012NV");
+        response.setResponseCode("HS000000");
 
         try {
-            response.setAdmittedToDate(Utility.convertDate("19-Nov-2018"));
-            response.setNonCitEntryDate(Utility.convertDate("01-Nov-2018"));
+            response.setAdmittedToDate(Utility.convertDate("11-Nov-2017"));
+            response.setNonCitEntryDate(Utility.convertDate("11-Nov-2017"));
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        response.setAdmittedToText("Admitted");
-        response.setFiveYearBarApplyCode("Yes");
-        response.setuSCitizenCode("Yes");
+        response.setAdmittedToText("Admit. Txt");
+        response.setFiveYearBarApplyCode("Y");
+        response.setuSCitizenCode("X");
 
         response.setNonCitMiddleName("A");
-        response.setNonCitFirstName("Smith");
-        response.setNonCitLastName("Allen");
+        response.setNonCitFirstName("Lemuel");
+        response.setNonCitLastName("Merritt");
 
-        response.setLawfulPresenceVerifiedCode("Y");
-        response.setNonCitCountryBirthCd("01");
-        response.setNonCitCountryCitCd("PA");
-        response.setuSCitizenCode("12348A23");
-        response.setEligStatementCd(37);
+        response.setLawfulPresenceVerifiedCode("N");
+        response.setNonCitCountryBirthCd("WA");
+        response.setNonCitCountryCitCd("ENG");
+        response.setuSCitizenCode("X");
+        response.setEligStatementCd(5);
 
 
     }

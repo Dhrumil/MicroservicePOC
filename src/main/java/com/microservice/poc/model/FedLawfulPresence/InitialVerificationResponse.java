@@ -27,7 +27,7 @@ public class InitialVerificationResponse extends AbstractModel {
     private String iAVTypeTxt;//TODO 1.100
     @ApiModelProperty(example = "2018-09-09", position = 6)
     private Date grantDate;
-    @ApiModelProperty(example = "Smith", position = 7)
+    @ApiModelProperty(example = "", position = 7)
     private String agencyAction;//TODO 1..250
     @ApiModelProperty(example = "Y", position = 8)
     private String fiveYearBarApplyCode;//TODO (Y-Yes, N-No, P-Pending, X-N/A)

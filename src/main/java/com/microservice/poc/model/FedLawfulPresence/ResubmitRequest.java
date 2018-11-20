@@ -19,6 +19,7 @@ public class ResubmitRequest extends AbstractModel {
     @ApiModelProperty(example = "Verified okay", position = 7)
     private String requesterCommentsForHub; //TODO 1-100
 
+
     public String getCaseNumber() {
         return caseNumber;
     }

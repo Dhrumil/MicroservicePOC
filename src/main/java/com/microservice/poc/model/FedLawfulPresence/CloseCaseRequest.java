@@ -10,7 +10,7 @@ import io.swagger.annotations.ApiModelProperty;
 @ApiModel(description = "Class representing a Close Case Request.")
 public class CloseCaseRequest extends AbstractModel {
 
-    @ApiModelProperty(example = "454646464TU")
+    @ApiModelProperty(example = "F573314109012NV")
     private String caseNumber;//TODO [a-zA-Z0-9]{13}[A-Z]{2}
 
     public String getCaseNumber() {

@@ -27,7 +27,7 @@ public class FedLawfulPresence2Service extends AbstractService<InitiateAdditiona
         error.setValue("N/A");
         responseErrors.add(error);
 
-        response.setResponseCode("00");
+        response.setResponseCode("HS000000");
         response.setResponseErrors(responseErrors);
 
 

@@ -12,7 +12,7 @@ import io.swagger.annotations.ApiModelProperty;
 @ApiModel(description = "Class representing a Retrieve Step 2 Case Resolution Request.")
 public class RetrieveStep2CaseResolutionRequest extends AbstractModel {
 
-    @ApiModelProperty(example = "454646464TU")
+    @ApiModelProperty(example = "F573314109012NV")
     private String caseNumber;//TODO [a-zA-Z0-9]{13}[A-Z]{2}
 
     public String getCaseNumber() {

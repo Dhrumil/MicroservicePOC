@@ -20,19 +20,19 @@ public class PersonLawfulDetail extends AbstractModel {
 
     @ApiModelProperty(example = "1246")
     private String uuid;
-    @ApiModelProperty(example = "76", position = 1)
+    @ApiModelProperty(example = "5", position = 1)
     private String eligibilityStatementCode;
     @ApiModelProperty(example = "PAL", position = 2)
     private String nonCitCoaCode;
     @ApiModelProperty(example = "Y", position = 3)
     private String fiveYearBarMet;
-    @ApiModelProperty(example = "CITIZENSHIP", position = 4)
+    @ApiModelProperty(example = "Y", position = 4)
     private String qualifiedCitizenCode;
-    @ApiModelProperty(example = "LAWFULPRESENCE", position = 5)
+    @ApiModelProperty(example = "N", position = 5)
     private String lawfulPresenceCode;
     @ApiModelProperty(example = "F573314109012NV", position = 6)
     private String caseNumber;
-    @ApiModelProperty(example = "124646", position = 7)
+    @ApiModelProperty(example = "", position = 7)
     private String agencyAction;
     @ApiModelProperty(example = "2018-03-24", position = 8)
     private Date grantDate;

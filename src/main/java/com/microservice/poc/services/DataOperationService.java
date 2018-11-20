@@ -29,12 +29,12 @@ public class DataOperationService extends AbstractService<PersonLawfulDetail> {
 
         PersonLawfulDetail request = new PersonLawfulDetail();
         request.setAgencyAction("");
-        request.setCaseNumber("TY");
-        request.setEligibilityStatementCode("");
-        request.setFiveYearBarMet("");
-        request.setLawfulPresenceCode("");
-        request.setNonCitCoaCode("");
-        request.setQualifiedCitizenCode("");
+        request.setCaseNumber("F573314109012NV");
+        request.setEligibilityStatementCode("5");
+        request.setFiveYearBarMet("Y");
+        request.setLawfulPresenceCode("N");
+        request.setNonCitCoaCode("PAL");
+        request.setQualifiedCitizenCode("Y");
         request.setUuid(String.valueOf(Utility.generateRandom(5) + 1));
 
         getResponses = new PersonLawFulDetailsResponse();

@@ -24,29 +24,29 @@ public class FedLawfulPresence1AService extends AbstractService<ReverificationRe
     static {
 
         responses = new ArrayList<>();
-        for (int i = 100; i < 105; ++i) {
+
             ReverificationResponse respTemp = new ReverificationResponse();
 
             try {
-                respTemp.setCaseNumber(String.valueOf(i));
-                respTemp.setResponseCode("00");
+                respTemp.setCaseNumber("F573314109012NV");
+                respTemp.setResponseCode("HS000000");
 
-                respTemp.setAdmittedToDate(Utility.convertDate("19-Nov-2018"));
-                respTemp.setAdmittedToText("Admitted");
-                respTemp.setFiveYearBarApplyCode("Yes");
-                respTemp.setuSCitizenCode("Yes");
-                respTemp.setNonCitEntryDate(Utility.convertDate("01-Nov-2018"));
-                respTemp.setNonCitMiddleName("A" + i);
-                respTemp.setNonCitFirstName("Smith" + i);
-                respTemp.setNonCitLastName("Allen" + i);
-                respTemp.setSponsorDataFoundIndicator(i % 2 == 0 ? true : false);
+                respTemp.setAdmittedToDate(Utility.convertDate("11-Nov-2017"));
+                respTemp.setAdmittedToText("Admit. Txt");
+                respTemp.setFiveYearBarApplyCode("Y");
+                respTemp.setuSCitizenCode("X");
+                respTemp.setNonCitEntryDate(Utility.convertDate("11-Nov-2017"));
+                respTemp.setNonCitMiddleName("A");
+                respTemp.setNonCitFirstName("Lemuel");
+                respTemp.setNonCitLastName("Merritt");
+                respTemp.setSponsorDataFoundIndicator(false);
 
                 respTemp.setGrantDate(Utility.convertDate("19-Nov-2018"));
-                respTemp.setLawfulPresenceVerifiedCode("Y");
-                respTemp.setNonCitCountryBirthCd("01");
-                respTemp.setNonCitCountryCitCd("PA");
-                respTemp.setuSCitizenCode("12348A23" + i);
-                respTemp.setEligStatementCd(37);
+                respTemp.setLawfulPresenceVerifiedCode("N");
+                respTemp.setNonCitCountryBirthCd("WA");
+                respTemp.setNonCitCountryCitCd("ENG");
+                respTemp.setuSCitizenCode("X");
+                respTemp.setEligStatementCd(5);
 
             } catch (ParseException e) {
                 logger.error(" [Static list]: " + e.getMessage());
@@ -54,7 +54,7 @@ public class FedLawfulPresence1AService extends AbstractService<ReverificationRe
             }
 
             responses.add(respTemp);
-        }
+
 
     }
 
@@ -88,31 +88,31 @@ public class FedLawfulPresence1AService extends AbstractService<ReverificationRe
     }
 
     private ReverificationResponse postResponse(ReverificationRequest request) {
-        ReverificationResponse response = new ReverificationResponse();
+       /* ReverificationResponse response = new ReverificationResponse();
 
 
         try {
 
             response.setCaseNumber(request.getCaseNumber());
-            response.setResponseCode("00");
+            response.setResponseCode("HS000000");
             response.setGrantDate(Utility.convertDate("19-Nov-2018"));
-            response.setAdmittedToDate(Utility.convertDate("19-Nov-2018"));
-            response.setAdmittedToText("Admitted");
-            response.setFiveYearBarApplyCode("Yes");
-            response.setuSCitizenCode("Yes");
-            response.setNonCitEntryDate(Utility.convertDate("01-Nov-2018"));
+            response.setAdmittedToDate(Utility.convertDate("11-Nov-2018"));
+            response.setAdmittedToText("Admit. Txt");
+            response.setFiveYearBarApplyCode("Y");
+            response.setuSCitizenCode("X");
+            response.setNonCitEntryDate(Utility.convertDate("01-Nov-2017"));
             response.setNonCitMiddleName("A");
-            response.setNonCitFirstName("Smith");
-            response.setNonCitLastName("Allen");
+            response.setNonCitFirstName("Lemuel");
+            response.setNonCitLastName("Merritt");
 
 
         } catch (ParseException e) {
             logger.error(" [postResponse()]: " + e.getMessage());
             LoggerUtil.logError(logger, e);
         }
+*/
 
-
-        return response;
+        return responses.get(0);
 
     }
 

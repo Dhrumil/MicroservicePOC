@@ -2,40 +2,83 @@ package com.microservice.poc.model.FedLawfulPresence;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.microservice.poc.model.AbstractModel;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 import java.util.Date;
 
 //@JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
+@ApiModel(description = "Class representing a Re verification Response.")
 public class ReverificationResponse extends AbstractModel {
-    private String caseNumber;
+
+    @ApiModelProperty(example = "F573314109012NV")
+    private String caseNumber;//TODO [a-zA-Z0-9]{13}[A-Z]{2}
+    @ApiModelProperty(example = "Merritt", position = 1)
     private String nonCitLastName;
+    @ApiModelProperty(example = "Lemuel", position = 2)
     private String nonCitFirstName;
+    @ApiModelProperty(example = "", position = 3)
     private String nonCitMiddleName;
+    @ApiModelProperty(example = "1986-03-24", position = 4)
     private Date nonCitBirthDate;
+    @ApiModelProperty(example = "2017-03-24", position = 5)
     private Date nonCitEntryDate;
+
+    @ApiModelProperty(example = "2017-11-11", position = 6)
     private Date admittedToDate;
+    @ApiModelProperty(example = "Admit. Txt", position = 7)
     private String admittedToText;
+
+    @ApiModelProperty(example = "WA", position = 8)
     private String nonCitCountryBirthCd;
+    @ApiModelProperty(example = "ENG", position = 9)
     private String nonCitCountryCitCd;
+
+    @ApiModelProperty(example = "PAL", position = 10)
     private String nonCitCoaCode;
+    @ApiModelProperty(example = "", position = 11)
     private String nonCitProvOfLaw;
-    private Date nonCitEadsExpireDate;
+    @ApiModelProperty(example = "5", position = 12)
     private int eligStatementCd;
+    @ApiModelProperty(example = "Institute Additional Verification", position = 13)
     private String eligStatementTxt;
+    @ApiModelProperty(example = "Sprint 7", position = 20)
     private String webServSftwrVer;
-    private Date grantDate;
-    private String grantDateReasonCd;
-    private boolean sponsorDataFoundIndicator;
-    private String arrayOfSponsorshipData;//TODO is this a list
-    private String sponsorshipReasonCd;
+    @ApiModelProperty(example = "Y", position = 14)
     private String fiveYearBarApplyCode;
+
+    @ApiModelProperty(example = "N", position = 16)
     private String lawfulPresenceVerifiedCode;
+
+    @ApiModelProperty(example = "", position = 27)
     private String agencyAction;
+
+    @ApiModelProperty(example = "Y", position = 17)
     private String qualifiedNonCitizenCode;
+
+    @ApiModelProperty(example = "Y", position = 15)
     private String fiveYearBarMetCode;
+
+    @ApiModelProperty(example = "X", position = 18)
     private String uSCitizenCode;
+    @ApiModelProperty(example = "HS000000", position = 19)
     private String responseCode;
+    @ApiModelProperty(example = "Success", position = 21)
+    private String responseDescriptionTxt;
+
+    @ApiModelProperty(example = "2020-01-20", position = 22)
+    private Date nonCitEadsExpireDate;
+    @ApiModelProperty(example = "GrantDateReasonCd0", position = 23)
+    private String grantDateReasonCd;
+    @ApiModelProperty(example = "false", position = 24)
+    private boolean sponsorDataFoundIndicator;
+    // private String arrayOfSponsorshipData;//TODO is this a list
+    @ApiModelProperty(example = "SponsorshipReasonCd0", position = 25)
+    private String sponsorshipReasonCd;
+    @ApiModelProperty(example = "2018-11-11", position = 26)
+    private Date grantDate;
+
 
     public String getResponseCode() {
         return responseCode;
@@ -198,13 +241,6 @@ public class ReverificationResponse extends AbstractModel {
         this.sponsorDataFoundIndicator = sponsorDataFoundIndicator;
     }
 
-    public String getArrayOfSponsorshipData() {
-        return arrayOfSponsorshipData;
-    }
-
-    public void setArrayOfSponsorshipData(String arrayOfSponsorshipData) {
-        this.arrayOfSponsorshipData = arrayOfSponsorshipData;
-    }
 
     public String getSponsorshipReasonCd() {
         return sponsorshipReasonCd;
@@ -260,5 +296,13 @@ public class ReverificationResponse extends AbstractModel {
 
     public void setuSCitizenCode(String uSCitizenCode) {
         this.uSCitizenCode = uSCitizenCode;
+    }
+
+    public String getResponseDescriptionTxt() {
+        return responseDescriptionTxt;
+    }
+
+    public void setResponseDescriptionTxt(String responseDescriptionTxt) {
+        this.responseDescriptionTxt = responseDescriptionTxt;
     }
 }

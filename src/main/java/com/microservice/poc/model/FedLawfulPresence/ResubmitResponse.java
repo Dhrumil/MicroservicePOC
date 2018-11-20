@@ -33,27 +33,46 @@ public class ResubmitResponse extends AbstractModel {
 
     @ApiModelProperty(example = "WA", position = 8)
     private String nonCitCountryBirthCd;
-    @ApiModelProperty(example = "WA", position = 9)
+    @ApiModelProperty(example = "ENG", position = 9)
     private String nonCitCountryCitCd;
 
-
+    @ApiModelProperty(example = "PAL", position = 10)
     private String nonCitCoaCode;
+    @ApiModelProperty(example = "", position = 11)
     private String nonCitProvOfLaw;
-
+    @ApiModelProperty(example = "5", position = 12)
     private int eligStatementCd;
+    @ApiModelProperty(example = "Institute Additional Verification", position = 13)
     private String eligStatementTxt;
-
+    @ApiModelProperty(example = "Sprint 7", position = 21)
     private String webServSftwrVer;
+    @ApiModelProperty(example = "Y", position = 14)
     private String fiveYearBarApplyCode;
 
+    @ApiModelProperty(example = "N", position = 16)
     private String lawfulPresenceVerifiedCode;
     private String agencyAction;
 
-
+    @ApiModelProperty(example = "Y", position = 17)
     private String qualifiedNonCitizenCode;
+
+    @ApiModelProperty(example = "Y", position = 15)
     private String fiveYearBarMetCode;
+
+    @ApiModelProperty(example = "X", position = 18)
     private String uSCitizenCode;
+    @ApiModelProperty(example = "HS000000", position = 19)
     private String responseCode;
+    @ApiModelProperty(example = "Success", position = 20)
+    private String responseDescriptionTxt;
+
+    public String getResponseDescriptionTxt() {
+        return responseDescriptionTxt;
+    }
+
+    public void setResponseDescriptionTxt(String responseDescriptionTxt) {
+        this.responseDescriptionTxt = responseDescriptionTxt;
+    }
 
     public String getCaseNumber() {
         return caseNumber;

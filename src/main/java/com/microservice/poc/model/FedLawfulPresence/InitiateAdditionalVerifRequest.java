@@ -11,11 +11,11 @@ import io.swagger.annotations.ApiModelProperty;
 @ApiModel(description = "Class representing a Initial Additional Verification Request.")
 public class InitiateAdditionalVerifRequest extends AbstractModel {
 
-    @ApiModelProperty(example = "Smith Mike")
+    @ApiModelProperty(example = "Lemuel Merritt")
     private String casePOCFullName;
     @ApiModelProperty(example = "7172768756", position = 1)
     private String casePOCPhoneNumber; //TODO [0-9]{10}
-    @ApiModelProperty(example = "765443434", position = 2)
+    @ApiModelProperty(example = "301", position = 2)
     private String casePOCPhoneNumberExtension;//TODO [0-9]{10}
     @ApiModelProperty(example = "000000773", position = 3)
     private String alienNumber;//TODO [0-9]{9}
@@ -23,7 +23,7 @@ public class InitiateAdditionalVerifRequest extends AbstractModel {
     @ApiModelProperty(example = "69000888062", position = 4)
     private String i94Number;
 
-    @ApiModelProperty(example = "A5869494", position = 5)
+    @ApiModelProperty(example = "B75855686647", position = 5)
     private String passportNumber;// TODO [a-zA-Z0-9]{6,12}
 
     @ApiModelProperty(example = "AZR123764545", position = 6)
@@ -31,7 +31,7 @@ public class InitiateAdditionalVerifRequest extends AbstractModel {
     @ApiModelProperty(example = "USA", position = 7)
     private String passportCountry;
 
-    @ApiModelProperty(example = "USA", position = 8)
+    @ApiModelProperty(example = "PLW", position = 8)
     private String countryOfIssuance;//TODO [a-zA-Z]{3}
 
     @ApiModelProperty(example = "false", position = 9)

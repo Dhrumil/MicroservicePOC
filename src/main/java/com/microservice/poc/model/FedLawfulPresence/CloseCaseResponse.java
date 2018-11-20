@@ -13,8 +13,18 @@ import java.util.List;
 @ApiModel(description = "Class representing a Close Case Response.")
 public class CloseCaseResponse extends AbstractModel {
 
-    @ApiModelProperty(example = "00")
+    @ApiModelProperty(example = "HS000000")
     private String responseCode;
+    @ApiModelProperty(example = "Success", position = 1)
+    private String responseDescriptionTxt;
+
+    public String getResponseDescriptionTxt() {
+        return responseDescriptionTxt;
+    }
+
+    public void setResponseDescriptionTxt(String responseDescriptionTxt) {
+        this.responseDescriptionTxt = responseDescriptionTxt;
+    }
 
     private List<ResponseErrors> responseErrors;
 

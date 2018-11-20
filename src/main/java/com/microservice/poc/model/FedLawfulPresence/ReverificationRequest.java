@@ -3,26 +3,56 @@ package com.microservice.poc.model.FedLawfulPresence;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.microservice.poc.model.AbstractModel;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
+import java.util.Date;
 
 //@JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
+@ApiModel(description = "Class representing a Re verification Request.")
 public class ReverificationRequest extends AbstractModel {
 
+    @ApiModelProperty(example = "F573314109012NV")
     private String caseNumber;
+    @ApiModelProperty(example = "AZR123764545", position = 1)
     private String receiptNumber;//TODO [a-zA-Z]{3}[0-9]{10}
+    @ApiModelProperty(example = "000000773", position = 2)
     private String alienNumber;//TODO [0-9]{9}
+    @ApiModelProperty(example = "69000888062", position = 3)
     private String i94Number; //TODO [0-9]{11}
+    @ApiModelProperty(position = 4, example = "2780020089")
     private String sevisId;//TODO 0-9]{10}
+    @ApiModelProperty(example = "PLW", position = 5)
     private String passportCountry;
+    @ApiModelProperty(example = "9876432", position = 6)
     private String naturalizationNumber;
+    @ApiModelProperty(example = "PA9876432", position = 7)
     private String citizenshipNumber;
+    @ApiModelProperty(example = "00074715", position = 8)
     private String visaNumber;
-    private String lastName;
+
+    @ApiModelProperty(example = "Lemuel", position = 9)
     private String firstName;
+    @ApiModelProperty(example = "A", position = 10)
     private String middleName;
-    private String dateOfBirth;
+    @ApiModelProperty(example = "Merritt", position = 11)
+    private String lastName;
+    @ApiModelProperty(example = "1986-03-24", position = 12)
+    private Date dateOfBirth;
+    @ApiModelProperty(example = "true", position = 13)
     private boolean fiveYearBarApplicabilityIndicator;
-    private String requesterCommentsForHub;
+
+    @ApiModelProperty(example = "", position = 14)
+    private String requesterCommentsForHub; //TODO 1-100
+
+    public Date getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public void setDateOfBirth(Date dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
 
     public String getCaseNumber() {
         return caseNumber;
@@ -120,13 +150,7 @@ public class ReverificationRequest extends AbstractModel {
         this.middleName = middleName;
     }
 
-    public String getDateOfBirth() {
-        return dateOfBirth;
-    }
 
-    public void setDateOfBirth(String dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
-    }
 
     public boolean isFiveYearBarApplicabilityIndicator() {
         return fiveYearBarApplicabilityIndicator;

@@ -46,11 +46,11 @@ public class FedLawfulPresence1Service extends AbstractService<InitialVerificati
     static {
 
         sampleResponse = new InitialVerificationResponse();
-        sampleResponse.setResponseCode("00");
+        sampleResponse.setResponseCode("HS000000");
         sampleResponse.setAgencyAction("");
-        sampleResponse.setCaseNumber("454646464TU");
-        sampleResponse.setEligStatementCd(1);
-        sampleResponse.setFiveYearBarApplyCode("true");
+        sampleResponse.setCaseNumber("F573314109012NV");
+        sampleResponse.setEligStatementCd(5);
+        sampleResponse.setFiveYearBarApplyCode("Y");
         try {
             sampleResponse.setGrantDate(Utility.convertDate("09-Nov-2018"));
         } catch (ParseException e) {
@@ -61,8 +61,8 @@ public class FedLawfulPresence1Service extends AbstractService<InitialVerificati
         sampleResponse.setiAVTypeTxt("");
         sampleResponse.setNonCitCoaCode("");
         sampleResponse.setQualifiedNonCitizenCode("");
-        sampleResponse.setUsCitizenCode("PA9876432");
-        sampleResponse.setVerificationStatus("NOT_VFD");
+        sampleResponse.setUsCitizenCode("X");
+        sampleResponse.setVerificationStatus("N");
 
 
     }
