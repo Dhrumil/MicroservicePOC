@@ -51,18 +51,19 @@ public class FedLawfulPresence1Service extends AbstractService<InitialVerificati
         sampleResponse.setCaseNumber("F573314109012NV");
         sampleResponse.setEligStatementCd(5);
         sampleResponse.setFiveYearBarApplyCode("Y");
+        sampleResponse.setFiveYearBarMetCode("Y");
         try {
             sampleResponse.setGrantDate(Utility.convertDate("09-Nov-2018"));
         } catch (ParseException e) {
             logger.error(" [Static data]: " + e.getMessage());
             LoggerUtil.logError(logger, e);
         }
-        sampleResponse.setiAVTypeCode("");
-        sampleResponse.setiAVTypeTxt("");
-        sampleResponse.setNonCitCoaCode("");
-        sampleResponse.setQualifiedNonCitizenCode("");
+        sampleResponse.setiAVTypeCode("OTHER");
+        sampleResponse.setiAVTypeTxt("IAV Text");
+        sampleResponse.setNonCitCoaCode("PAL");
+        sampleResponse.setQualifiedNonCitizenCode("Y");
         sampleResponse.setUsCitizenCode("X");
-        sampleResponse.setVerificationStatus("N");
+        sampleResponse.setVerificationStatus("NOT_VFD");
 
 
     }

@@ -28,6 +28,7 @@ public class CloseCaseService extends AbstractService<CloseCaseRequest> {
         responseErrors.add(error);
 
         response.setResponseCode("HS000000");
+        response.setResponseDescriptionTxt("Success");
         response.setResponseErrors(responseErrors);
 
 

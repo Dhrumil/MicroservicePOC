@@ -28,9 +28,8 @@ public class FedLawfulPresence2Service extends AbstractService<InitiateAdditiona
         responseErrors.add(error);
 
         response.setResponseCode("HS000000");
+        response.setResponseDescriptionTxt("Success");
         response.setResponseErrors(responseErrors);
-
-
     }
 
     @Autowired

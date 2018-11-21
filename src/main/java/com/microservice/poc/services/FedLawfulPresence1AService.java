@@ -30,6 +30,9 @@ public class FedLawfulPresence1AService extends AbstractService<ReverificationRe
             try {
                 respTemp.setCaseNumber("F573314109012NV");
                 respTemp.setResponseCode("HS000000");
+                respTemp.setNonCitCoaCode("PAL");
+                respTemp.setFiveYearBarApplyCode("Y");
+                respTemp.setFiveYearBarMetCode("Y");
 
                 respTemp.setAdmittedToDate(Utility.convertDate("11-Nov-2017"));
                 respTemp.setAdmittedToText("Admit. Txt");
@@ -40,6 +43,7 @@ public class FedLawfulPresence1AService extends AbstractService<ReverificationRe
                 respTemp.setNonCitFirstName("Lemuel");
                 respTemp.setNonCitLastName("Merritt");
                 respTemp.setSponsorDataFoundIndicator(false);
+                respTemp.setNonCitBirthDate(Utility.convertDate("24-Mar-1986"));
 
                 respTemp.setGrantDate(Utility.convertDate("19-Nov-2018"));
                 respTemp.setLawfulPresenceVerifiedCode("N");
@@ -47,6 +51,13 @@ public class FedLawfulPresence1AService extends AbstractService<ReverificationRe
                 respTemp.setNonCitCountryCitCd("ENG");
                 respTemp.setuSCitizenCode("X");
                 respTemp.setEligStatementCd(5);
+                respTemp.setEligStatementTxt("Institute Additional Verification");
+                respTemp.setWebServSftwrVer("Sprint 7");
+                respTemp.setSponsorshipReasonCd("SponsorshipReasonCd0");
+                respTemp.setNonCitEadsExpireDate(Utility.convertDate("20-Jan-2020"));
+                respTemp.setResponseDescriptionTxt("Success");
+                respTemp.setGrantDateReasonCd("GrantDateReasonCd0");
+                respTemp.setQualifiedNonCitizenCode("Y");
 
             } catch (ParseException e) {
                 logger.error(" [Static list]: " + e.getMessage());
@@ -76,42 +87,10 @@ public class FedLawfulPresence1AService extends AbstractService<ReverificationRe
     }
 
     public List<ReverificationResponse> get() {
-     /*
-        List<ReverificationResponse> response = new ArrayList<>();
-      try {
-            response.set(0,new ReverificationResponse());//TODO
-        } catch (Exception ex) {
-            logger.error(" [get()]: " + ex.getMessage());
-            LoggerUtil.logError(logger, ex);
-        }*/
         return responses;
     }
 
     private ReverificationResponse postResponse(ReverificationRequest request) {
-       /* ReverificationResponse response = new ReverificationResponse();
-
-
-        try {
-
-            response.setCaseNumber(request.getCaseNumber());
-            response.setResponseCode("HS000000");
-            response.setGrantDate(Utility.convertDate("19-Nov-2018"));
-            response.setAdmittedToDate(Utility.convertDate("11-Nov-2018"));
-            response.setAdmittedToText("Admit. Txt");
-            response.setFiveYearBarApplyCode("Y");
-            response.setuSCitizenCode("X");
-            response.setNonCitEntryDate(Utility.convertDate("01-Nov-2017"));
-            response.setNonCitMiddleName("A");
-            response.setNonCitFirstName("Lemuel");
-            response.setNonCitLastName("Merritt");
-
-
-        } catch (ParseException e) {
-            logger.error(" [postResponse()]: " + e.getMessage());
-            LoggerUtil.logError(logger, e);
-        }
-*/
-
         return responses.get(0);
 
     }
