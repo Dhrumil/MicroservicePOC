@@ -8,11 +8,9 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -26,6 +24,7 @@ public class FedLawfulPresence1BController {
     private FedLawfulPresence1BService fedLawfulPresence1BService;
 
     @RequestMapping(method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseStatus(value = HttpStatus.OK)
     @ApiOperation("${fedLawfulPresence1b.process}")
     public ResubmitResponse
     resubmit(@ApiParam("Person information Resubmission for a new Federal Person Lawful Detail to be created.")
@@ -34,6 +33,7 @@ public class FedLawfulPresence1BController {
     }
 
     @RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseStatus(value = HttpStatus.OK)
     @ApiOperation("${fedLawfulPresence1b..getall}")
     public List<ResubmitResponse> getAllResubmision() {
         return fedLawfulPresence1BService.get();

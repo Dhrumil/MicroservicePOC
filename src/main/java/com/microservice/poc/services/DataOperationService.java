@@ -116,10 +116,11 @@ public class DataOperationService extends AbstractService<PersonLawfulDetail> {
         dataOperationDao.delete(id);
     }
 
-    public PersonLawfulDetail find(Long personId) {
+    public PersonLawFulDetailsResponse findById(Long personId) {
 
-        DataOperationDao dataOperationDao = (DataOperationDao) dao;
-        return dataOperationDao.find(personId);
+        //DataOperationDao dataOperationDao = (DataOperationDao) dao;
+        //return dataOperationDao.find(personId);
+        return getResponses;
     }
 
     public PersonLawfulDetail findByEmail(String email) {

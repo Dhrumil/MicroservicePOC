@@ -7,11 +7,9 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -25,6 +23,7 @@ public class RetrieveStep2CaseResolutionController {
     private RetrieveStep2CaseResolutionService retrieveStep2CaseResolutionService;
 
     @RequestMapping(method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseStatus(value = HttpStatus.OK)
     @ApiOperation("${fedLawfulretrievestep.process}")
     public RetrieveStep2CaseResolutionResponse
     retrieve(@ApiParam("Retrieve Step2 Case Resolution  for a new Federal Person Lawful Detail to be created.")
@@ -33,6 +32,7 @@ public class RetrieveStep2CaseResolutionController {
     }
 
     @RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseStatus(value = HttpStatus.OK)
     @ApiOperation("${fedLawfulretrievestep..getall}")
     public List<RetrieveStep2CaseResolutionResponse> getAllRetrieve() {
         return retrieveStep2CaseResolutionService.get();
